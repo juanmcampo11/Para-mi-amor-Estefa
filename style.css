@@ -1,124 +1,145 @@
-/* ==========================
-   ESTILO GENERAL
-========================== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* =========================================
+   Reset y ajustes generales
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    background:linear-gradient(180deg,#111,#1f1f1f,#111);
-    color:#fff;
-    font-family:Arial, Helvetica, sans-serif;
-    text-align:center;
-    overflow-x:hidden;
+body {
+    background-color: #121212; /* Fondo oscuro elegante */
+    color: #ffffff; /* Texto blanco para resaltar */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+    overflow-x: hidden; /* Evita que la pantalla se mueva hacia los lados */
 }
 
-/* ==========================
-   CONTENEDOR
-========================== */
-
-.container{
-    width:90%;
-    max-width:900px;
-    margin:auto;
-    padding:40px 20px;
+/* Partículas de fondo (asegura que el canvas quede detrás de todo) */
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; 
 }
 
-/* ==========================
-   TITULO
-========================== */
-
-h1{
-    color:#ff4d6d;
-    font-size:48px;
-    margin-bottom:20px;
+/* =========================================
+   Tipografía
+   ========================================= */
+h1, h2 {
+    color: #ff4d6d; /* Color rosado/rojo para los títulos */
+    margin-bottom: 20px;
 }
 
-h2{
-    color:#ffd6de;
-    margin-bottom:15px;
+h1 {
+    font-size: 2.5rem;
+    margin-top: 50px;
 }
 
-p{
-    font-size:22px;
-    line-height:1.8;
-    margin-top:20px;
-    margin-bottom:40px;
-    text-align:justify;
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
 
-/* ==========================
-   CADA SECCION
-========================== */
-
-section{
-    margin:70px auto;
+/* =========================================
+   Estructura de las secciones
+   ========================================= */
+section {
+    width: 100%;
+    max-width: 800px; /* Evita que el texto sea demasiado ancho en PC */
+    margin: 40px 0;
+    text-align: center;
 }
 
-/* ==========================
-   IMAGENES
-========================== */
-
-img{
-    width:100%;
-    max-width:700px;
-    height:auto;
-    display:block;
-    margin:0 auto 25px auto;
-    border-radius:18px;
-    box-shadow:0 10px 30px rgba(255,255,255,.2);
+/* =========================================
+   Galería de Fotos (¡La corrección principal!)
+   ========================================= */
+.galeria {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las fotos bajen de línea si no caben */
+    justify-content: center;
+    gap: 20px; /* Espacio entre foto y foto */
+    margin-top: 20px;
 }
 
-/* ==========================
-   BOTON
-========================== */
-
-button{
-    background:#ff4d6d;
-    color:white;
-    border:none;
-    padding:15px 35px;
-    border-radius:30px;
-    font-size:18px;
-    cursor:pointer;
-    transition:.3s;
+.foto-item {
+    width: 100%;
+    max-width: 300px; /* Tamaño máximo de la foto para que no invada la pantalla */
+    border-radius: 15px; /* Bordes redondeados */
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.2); /* Sombras con un leve tono rosado */
+    transition: transform 0.3s ease;
 }
 
-button:hover{
-    background:#ff1f4b;
-    transform:scale(1.05);
+.foto-item:hover {
+    transform: scale(1.05); /* Pequeño efecto de zoom al pasar el mouse por la foto */
 }
 
-/* ==========================
-   PIE DE PAGINA
-========================== */
-
-footer{
-    margin:60px 0 30px;
-    color:#ccc;
-    font-size:18px;
+.foto-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    display: block;
 }
 
-/* ==========================
-   RESPONSIVE
-========================== */
+/* =========================================
+   Tarjetas de texto (Cards)
+   ========================================= */
+.card {
+    background-color: rgba(255, 255, 255, 0.05); /* Fondo semitransparente oscuro */
+    padding: 30px;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
 
-@media(max-width:768px){
+.quote {
+    font-style: italic;
+    color: #e0e0e0; /* Un gris muy claro para diferenciar la cita */
+}
 
-    h1{
-        font-size:34px;
-    }
+/* =========================================
+   Botones
+   ========================================= */
+.btn {
+    background-color: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
 
-    p{
-        font-size:19px;
-        text-align:left;
-    }
+.btn:hover {
+    background-color: #ff3355; /* Un tono un poco más fuerte al pasar el mouse */
+    transform: scale(1.05);
+}
 
-    img{
-        width:100%;
-    }
+/* =========================================
+   Footer
+   ========================================= */
+footer {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #888;
+}
 
+/* =========================================
+   Efectos y animaciones
+   ========================================= */
+/* Clase para animaciones (si la usas desde tu script.js) */
+.fade {
+    opacity: 1; 
+    transition: opacity 1s ease-in-out;
 }
