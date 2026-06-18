@@ -1,7 +1,7 @@
 // ===== Música =====
 window.addEventListener("load", () => {
-    const musica = document.getElementById("musica");
-
+   const musica = document.getElementById("musica");
+musica.src = "música/nuestra-cancion.mp3";
     if (musica) {
         musica.volume = 0.35;
 
