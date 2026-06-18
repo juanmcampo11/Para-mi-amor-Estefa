@@ -38,7 +38,6 @@ h1, h2 {
 
 h1 {
     font-size: 2.5rem;
-    margin-top: 50px;
 }
 
 p {
@@ -48,17 +47,23 @@ p {
 }
 
 /* =========================================
-   Estructura de las secciones
+   Estructura de las secciones (Pantalla Completa)
    ========================================= */
 section {
     width: 100%;
     max-width: 800px; /* Evita que el texto sea demasiado ancho en PC */
-    margin: 40px 0;
+    min-height: 100vh; /* ¡ESTO HACE QUE CADA MENSAJE OCUPE TODA LA PANTALLA! */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
     text-align: center;
+    padding: 20px 0;
 }
 
 /* =========================================
-   Galería de Fotos (¡La corrección principal!)
+   Galería de Fotos 
    ========================================= */
 .galeria {
     display: flex;
@@ -66,11 +71,12 @@ section {
     justify-content: center;
     gap: 20px; /* Espacio entre foto y foto */
     margin-top: 20px;
+    width: 100%;
 }
 
 .foto-item {
     width: 100%;
-    max-width: 300px; /* Tamaño máximo de la foto para que no invada la pantalla */
+    max-width: 300px; /* Tamaño máximo de la foto */
     border-radius: 15px; /* Bordes redondeados */
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(255, 77, 109, 0.2); /* Sombras con un leve tono rosado */
@@ -78,7 +84,7 @@ section {
 }
 
 .foto-item:hover {
-    transform: scale(1.05); /* Pequeño efecto de zoom al pasar el mouse por la foto */
+    transform: scale(1.05); /* Pequeño efecto de zoom al pasar el mouse */
 }
 
 .foto-item img {
@@ -95,7 +101,7 @@ section {
     background-color: rgba(255, 255, 255, 0.05); /* Fondo semitransparente oscuro */
     padding: 30px;
     border-radius: 15px;
-    margin: 20px 0;
+    width: 100%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -121,7 +127,7 @@ section {
 }
 
 .btn:hover {
-    background-color: #ff3355; /* Un tono un poco más fuerte al pasar el mouse */
+    background-color: #ff3355;
     transform: scale(1.05);
 }
 
@@ -129,17 +135,45 @@ section {
    Footer
    ========================================= */
 footer {
-    margin-top: 50px;
     margin-bottom: 20px;
     font-size: 0.9rem;
     color: #888;
 }
 
 /* =========================================
-   Efectos y animaciones
+   Animación de entrada (Scroll Observer)
    ========================================= */
-/* Clase para animaciones (si la usas desde tu script.js) */
 .fade {
-    opacity: 1; 
-    transition: opacity 1s ease-in-out;
+    opacity: 0;
+    transform: translateY(40px); /* Empieza un poco más abajo */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* La clase que inyecta JavaScript cuando haces scroll */
+.fade.show {
+    opacity: 1;
+    transform: translateY(0); /* Vuelve a su posición original */
+}
+
+/* =========================================
+   Corazones Flotantes (Desde JS)
+   ========================================= */
+.heart {
+    position: fixed;
+    bottom: -50px; /* Nacen desde abajo de la pantalla */
+    color: #ff4d6d;
+    pointer-events: none; /* Para que los corazones no estorben al hacer click */
+    z-index: 5;
+    animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120vh) rotate(360deg); /* Flotan hacia arriba y giran */
+        opacity: 0; /* Desaparecen poco a poco */
+    }
 }
