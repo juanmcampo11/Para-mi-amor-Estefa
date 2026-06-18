@@ -11,10 +11,12 @@ html{
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    background:linear-gradient(180deg,#090016,#13052d,#1d083d,#090016);
+   
+    margin:0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#000;
     color:#fff;
-    overflow-x:hidden;
 }
 
 /* Fondo */
