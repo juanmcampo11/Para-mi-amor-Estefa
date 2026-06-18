@@ -1,25 +1,32 @@
-// ===== Música (Se activa al darle "Comenzar") =====
 window.addEventListener("load", () => {
     const musica = document.getElementById("musica");
     if (musica) {
-        musica.volume = 0.35; // Volumen suave
+        musica.volume = 0.35; 
     }
 
-    // Buscar el botón comenzar para que encienda la música
     const btnComenzar = document.querySelector("button[onclick*='amor']");
-    if (btnComenzar && musica) {
+    if (btnComenzar) {
         btnComenzar.addEventListener("click", () => {
-            musica.play().catch(() => console.log("El navegador bloqueó el autoplay."));
+            if (musica) {
+                musica.play().catch(() => console.log("El navegador bloqueó la música."));
+            }
+            
+            // Fuerza a que la tarjeta aparezca y se empiece a escribir
+            setTimeout(() => {
+                const tarjeta1 = document.getElementById("tarjeta1");
+                if(tarjeta1) {
+                    tarjeta1.classList.add("show");
+                    escribir("mensaje1", "Desde que llegaste a mi vida entendí que el verdadero amor existe. Gracias por hacer mis días más felices, por regalarme tu sonrisa, tu paciencia, tu cariño y por enseñarme que siempre vale la pena luchar por aquello que se ama.");
+                }
+            }, 600);
         });
     }
 });
 
-// ===== Escribir texto letra por letra =====
 function escribir(id, texto, velocidad = 40) {
     const elemento = document.getElementById(id);
     if (!elemento) return;
 
-    // Esto evita que el texto se vuelva a escribir desde cero si ella sube y baja la pantalla
     if (elemento.dataset.escrito === "true") return;
     elemento.dataset.escrito = "true";
 
@@ -36,13 +43,11 @@ function escribir(id, texto, velocidad = 40) {
     escribirLetra();
 }
 
-// ===== Animación al hacer scroll y lanzar textos =====
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add("show"); // Hace aparecer la sección suavemente
+            entry.target.classList.add("show"); 
 
-            // Disparar la escritura SOLO cuando la tarjeta se asoma en la pantalla
             if (entry.target.id === "tarjeta1") {
                 escribir("mensaje1", "Desde que llegaste a mi vida entendí que el verdadero amor existe. Gracias por hacer mis días más felices, por regalarme tu sonrisa, tu paciencia, tu cariño y por enseñarme que siempre vale la pena luchar por aquello que se ama.");
             } 
@@ -55,19 +60,50 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, {
-    threshold: 0.4 // Se activa cuando casi la mitad de la tarjeta es visible
+    threshold: 0.1 
 });
 
-// Observar todos los elementos con la clase "fade" para que aparezcan suavemente
 document.querySelectorAll(".fade").forEach(el => {
     observer.observe(el);
 });
 
-// ===== Corazones flotando =====
 function crearCorazon() {
     const heart = document.createElement("div");
     heart.className = "heart";
     const corazones = ["❤", "💕", "💖", "💗", "💘", "💝"];
     
     heart.innerHTML = corazones[Math.floor(Math.random() * corazones.length)];
-    heart.style.left = Math.
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (20 + Math.random() * 25) + "px";
+    heart.style.animationDuration = (6 + Math.random() * 5) + "s";
+    
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 11000);
+}
+setInterval(crearCorazon, 450);
+
+const boton = document.getElementById("inicio");
+if (boton) {
+    boton.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+}
+
+document.querySelectorAll(".foto-item img").forEach(img => {
+    img.addEventListener("mousemove", (e) => {
+        const rect = img.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        img.style.transform = `perspective(900px) rotateY(${(x - rect.width / 2) / 30}deg) rotateX(${-(y - rect.height / 2) / 30}deg) scale(1.06)`;
+    });
+    
+    img.addEventListener("mouseleave", () => {
+        img.style.transform = "scale(1)";
+    });
+});
