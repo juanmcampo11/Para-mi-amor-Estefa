@@ -2,193 +2,126 @@
 <html lang="es">
 
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Para el Amor de Mi Vida ❤️</title>
-
-<link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para el Amor de Mi Vida ❤️</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<canvas id="particles"></canvas>
-
-<audio id="musica" loop>
-    <source src="música/nuestra-cancion.mp3" type="audio/mpeg">
-    Tu navegador no soporta audio.
-</audio>
-<section>
-
-<h1 class="fade">
-Para el Amor de Mi Vida ❤️
-</h1>
-
-<p class="fade">
-
-Esta página es solo una pequeña muestra de todo lo que siento por ti.
-
-Quería regalarte algo diferente...
-
-Algo que pudieras abrir siempre que lo necesitaras.
-
-Porque mereces recordar todos los días lo maravillosa que eres.
-
-</p>
-
-<button class="btn fade" onclick="document.getElementById('amor').scrollIntoView({behavior:'smooth'})">
-
-Comenzar ❤️
-
-</button>
-
-</section>
-
-<section id="amor">
-
-<div class="card fade">
-
-<h2>Lo mucho que te amo ❤️</h2>
-
-<p id="mensaje1"></p>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="gallery fade">
-
-<div class="galeria">
-<section>
-    <img src="imágenes/foto1.jpeg" alt="">
-    <p>Lo orgulloso que estoy de ti 🌹
-Estoy profundamente orgulloso de la mujer que eres. Cada meta que alcanzas demuestra la fuerza que llevas dentro. Nunca dudes de ti, porque yo veo todos los días una mujer inteligente, hermosa, valiente y capaz de conquistar cualquier sueño.</p>
-</section>
-
-<section>
-    <img src="imágenes/foto2.jpeg" alt="">
-    <p>Cuando sientas que ya no puedes más 💖
-Cuando sientas que ya no puedes más, quiero que recuerdes esto: respira, levanta la cabeza y sigue adelante. Tú eres mucho más fuerte de lo que imaginas. Confía en ti como yo confío en ti. Siempre habrá una salida y yo estaré aquí para apoyarte en cada paso.</p>
-</section>
-
-<section>
-    <img src="imágenes/foto3.jpeg" alt="">
-    <p>Quiero que recuerdes siempre...
-"Nunca olvides que eres el amor de mi vida. Eres la mujer más fuerte, más hermosa y más valiente que conozco. No importa cuántas veces la vida quiera ponerte pruebas... Siempre podrás con ellas. Y cuando sientas que ya no tienes fuerzas... Aquí estará mi amor para sostenerte. Siempre."</p>
-</section>
-
-<section>
-    <img src="imágenes/foto4.jpeg" alt="">
-    <p>Gracias por existir ❤️
-Gracias por cada abrazo. Gracias por cada sonrisa. Gracias por cada sueño que compartimos. Gracias por hacer de mi vida un lugar mucho más bonito. Te amo infinitamente. Hoy... Mañana... Y toda la vida. ❤️</p>
-</section>
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="card fade">
-
-<h2>Lo orgulloso que estoy de ti 🌹</h2>
-
-<p id="mensaje2"></p>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="card fade">
-
-<h2>Cuando sientas que ya no puedes más 💖</h2>
-
-<p id="mensaje3"></p>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="card fade">
-
-<h2>Quiero que recuerdes siempre...</h2>
-
-<p class="quote">
-
-"Nunca olvides que eres el amor de mi vida.
-
-Eres la mujer más fuerte, más hermosa y más valiente que conozco.
-
-No importa cuántas veces la vida quiera ponerte pruebas...
-
-Siempre podrás con ellas.
-
-Y cuando sientas que ya no tienes fuerzas...
-
-Aquí estará mi amor para sostenerte.
-
-Siempre."
-
-</p>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="fade">
-
-Gracias por existir ❤️
-
-</h2>
-
-<p class="fade">
-
-Gracias por cada abrazo.
-
-Gracias por cada sonrisa.
-
-Gracias por cada sueño que compartimos.
-
-Gracias por hacer de mi vida un lugar mucho más bonito.
-
-Te amo infinitamente.
-
-Hoy...
-
-Mañana...
-
-Y toda la vida.
-
-❤️
-
-</p>
-
-<button class="btn" id="inicio">
-
-Volver al inicio
-
-</button>
-
-</section>
-
-<footer>
-
-Hecho con todo mi amor ❤️
-
-</footer>
-
-<script src="script.js"></script>
+    <canvas id="particles"></canvas>
+
+    <audio id="musica" loop>
+        <source src="música/nuestra-cancion.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
+
+    <!-- Sección de Inicio -->
+    <section>
+        <h1 class="fade">Para el Amor de Mi Vida ❤️</h1>
+        <p class="fade">
+            Esta página es solo una pequeña muestra de todo lo que siento por ti.
+            Quería regalarte algo diferente...
+            Algo que pudieras abrir siempre que lo necesitaras.
+            Porque mereces recordar todos los días lo maravillosa que eres.
+        </p>
+        <button class="btn fade" onclick="document.getElementById('amor').scrollIntoView({behavior:'smooth'})">
+            Comenzar ❤️
+        </button>
+    </section>
+
+    <!-- Sección: Lo mucho que te amo -->
+    <section id="amor">
+        <div class="card fade">
+            <h2>Lo mucho que te amo ❤️</h2>
+            <!-- Si tienes un script que llena este párrafo, funcionará perfecto -->
+            <p id="mensaje1"></p>
+        </div>
+    </section>
+
+    <!-- Galería de Fotos Corregida -->
+    <section id="galeria-fotos">
+        <div class="galeria fade">
+            <div class="foto-item">
+                <img src="imágenes/foto1.jpeg" alt="Nosotros">
+            </div>
+            <div class="foto-item">
+                <img src="imágenes/foto2.jpeg" alt="Nosotros">
+            </div>
+            <div class="foto-item">
+                <img src="imágenes/foto3.jpeg" alt="Nosotros">
+            </div>
+            <div class="foto-item">
+                <img src="imágenes/foto4.jpeg" alt="Nosotros">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Lo orgulloso que estoy -->
+    <section>
+        <div class="card fade">
+            <h2>Lo orgulloso que estoy de ti 🌹</h2>
+            <p>
+                Estoy profundamente orgulloso de la mujer que eres. Cada meta que alcanzas demuestra la fuerza que llevas dentro. Nunca dudes de ti, porque yo veo todos los días una mujer inteligente, hermosa, valiente y capaz de conquistar cualquier sueño.
+            </p>
+            <!-- Dejé este ID por si tu script lo usa -->
+            <p id="mensaje2"></p>
+        </div>
+    </section>
+
+    <!-- Sección: Cuando sientas que ya no puedes más -->
+    <section>
+        <div class="card fade">
+            <h2>Cuando sientas que ya no puedes más 💖</h2>
+            <p>
+                Cuando sientas que ya no puedes más, quiero que recuerdes esto: respira, levanta la cabeza y sigue adelante. Tú eres mucho más fuerte de lo que imaginas. Confía en ti como yo confío en ti. Siempre habrá una salida y yo estaré aquí para apoyarte en cada paso.
+            </p>
+            <!-- Dejé este ID por si tu script lo usa -->
+            <p id="mensaje3"></p>
+        </div>
+    </section>
+
+    <!-- Sección: Quiero que recuerdes siempre -->
+    <section>
+        <div class="card fade">
+            <h2>Quiero que recuerdes siempre...</h2>
+            <p class="quote">
+                "Nunca olvides que eres el amor de mi vida.
+                Eres la mujer más fuerte, más hermosa y más valiente que conozco.
+                No importa cuántas veces la vida quiera ponerte pruebas...
+                Siempre podrás con ellas.
+                Y cuando sientas que ya no tienes fuerzas...
+                Aquí estará mi amor para sostenerte.
+                Siempre."
+            </p>
+        </div>
+    </section>
+
+    <!-- Sección Final: Gracias por existir -->
+    <section>
+        <h2 class="fade">Gracias por existir ❤️</h2>
+        <p class="fade">
+            Gracias por cada abrazo.<br>
+            Gracias por cada sonrisa.<br>
+            Gracias por cada sueño que compartimos.<br>
+            Gracias por hacer de mi vida un lugar mucho más bonito.<br><br>
+            Te amo infinitamente.<br>
+            Hoy...<br>
+            Mañana...<br>
+            Y toda la vida.<br>
+            ❤️
+        </p>
+        <button class="btn" id="inicio">
+            Volver al inicio
+        </button>
+    </section>
+
+    <footer>
+        Hecho con todo mi amor ❤️
+    </footer>
+
+    <script src="script.js"></script>
 
 </body>
 
