@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(180deg,#090016,#13052d,#1d083d,#090016);
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* Fondo */
+
+#particles{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top,#ff4fa955,transparent 45%),
+    radial-gradient(circle at bottom,#7b2cff55,transparent 45%);
+    z-index:-3;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+    radial-gradient(white 1px,transparent 1px);
+    background-size:40px 40px;
+    opacity:.25;
+    animation:stars 50s linear infinite;
+    z-index:-2;
+}
+
+@keyframes stars{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-500px);
+    }
+}
+
+/* Música */
+
+audio{
+    display:none;
+}
+
+/* Secciones */
+
+section{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:80px 10%;
+    text-align:center;
+}
+
+/* Títulos */
+
+h1{
+    font-family:'Dancing Script',cursive;
+    font-size:70px;
+    color:#ffd6ea;
+    margin-bottom:25px;
+    text-shadow:0 0 30px #ff66b3;
+}
+
+h2{
+    font-family:'Dancing Script',cursive;
+    font-size:55px;
+    color:#ffd6ea;
+    margin-bottom:25px;
+}
+
+p{
+    max-width:850px;
+    font-size:20px;
+    line-height:1.9;
+    color:#eee;
+}
+
+/* Botones */
+
+.btn{
+    margin-top:40px;
+    padding:18px 45px;
+    border:none;
+    border-radius:40px;
+    background:#ff3f93;
+    color:#fff;
+    font-size:18px;
+    cursor:pointer;
+    transition:.35s;
+    box-shadow:0 0 20px #ff4fa9;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+    background:#ff0f7b;
+    box-shadow:0 0 35px #ff5ca8;
+}
+
+/* Tarjetas */
+
+.card{
+    width:100%;
+    max-width:900px;
+    padding:45px;
+    margin-top:40px;
+    border-radius:25px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:0 0 40px rgba(0,0,0,.35);
+}
+
+/* Galería */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+    width:100%;
+    margin-top:50px;
+}
+
+.gallery img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:.5s;
+    box-shadow:0 0 25px rgba(255,105,180,.45);
+}
+
+.gallery img:hover{
+    transform:scale(1.06);
+    box-shadow:0 0 45px rgba(255,105,180,.85);
+}
+
+/* Mensajes */
+
+.quote{
+    font-size:26px;
+    font-style:italic;
+    color:#ffd6ea;
+    margin-top:20px;
+}
+
+/* Footer */
+
+footer{
+    padding:40px;
+    text-align:center;
+    color:#bbb;
+    font-size:15px;
+}
+
+/* Corazones */
+
+.heart{
+    position:fixed;
+    bottom:-50px;
+    color:#ff5da2;
+    font-size:22px;
+    animation:float 8s linear infinite;
+    opacity:.8;
+    pointer-events:none;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(0) rotate(0deg);
+        opacity:.9;
+    }
+
+    to{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* Animaciones */
+
+.fade{
+    opacity:0;
+    transform:translateY(60px);
+    transition:1.2s;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+h1{
+    font-size:48px;
+}
+
+h2{
+    font-size:38px;
+}
+
+p{
+    font-size:18px;
+}
+
+.gallery img{
+    height:260px;
+}
+
+.card{
+    padding:30px;
+}
+
+.btn{
+    width:100%;
+}
+
+}
