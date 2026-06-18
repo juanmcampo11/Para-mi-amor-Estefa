@@ -10,140 +10,165 @@
 
 <link rel="stylesheet" href="style.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
 
-<div id="loader">
+<canvas id="particles"></canvas>
 
-<h1>❤️</h1>
+<audio id="musica" autoplay loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
 
-<p>Cargando una historia de amor...</p>
+<section>
 
-</div>
+<h1 class="fade">
+Para el Amor de Mi Vida ❤️
+</h1>
 
-<section class="hero">
+<p class="fade">
 
-<div class="overlay"></div>
+Esta página es solo una pequeña muestra de todo lo que siento por ti.
 
-<div class="contenido">
+Quería regalarte algo diferente...
 
-<h2>Para la mujer</h2>
+Algo que pudieras abrir siempre que lo necesitaras.
 
-<h1>que cambió mi vida...</h1>
-
-<p>
-
-Hay palabras que nunca alcanzarán para decir todo lo que siento por ti.
-
-Por eso decidí crear este pequeño lugar donde siempre podrás volver
-
-cuando quieras recordar cuánto te amo.
+Porque mereces recordar todos los días lo maravillosa que eres.
 
 </p>
 
-<button id="abrir">
+<button class="btn fade" onclick="document.getElementById('amor').scrollIntoView({behavior:'smooth'})">
 
-Abrir mi corazón ❤️
+Comenzar ❤️
 
 </button>
 
-</div>
-
 </section>
 
-<section id="bienvenida" class="oculto">
+<section id="amor">
 
-<h2>Bienvenida, mi amor</h2>
-
-<p id="texto1"></p>
-
-</section>
-
-<section class="oculto" id="galeria">
-
-<h2>Nuestros Recuerdos 📸</h2>
-
-<div class="imagenes">
-
-<img src="imagenes/portada.jpg">
-
-<img src="imagenes/foto1.jpg">
-
-<img src="imagenes/foto2.jpg">
-
-<img src="imagenes/foto3.jpg">
-
-<img src="imagenes/foto4.jpg">
-
-</div>
-
-</section>
-
-<section class="oculto" id="amor">
+<div class="card fade">
 
 <h2>Lo mucho que te amo ❤️</h2>
 
-<p id="texto2"></p>
+<p id="mensaje1"></p>
+
+</div>
 
 </section>
 
-<section class="oculto" id="orgullo">
+<section>
+
+<div class="gallery fade">
+
+<img src="foto1.jpg">
+
+<img src="foto2.jpg">
+
+<img src="foto3.jpg">
+
+<img src="foto4.jpg">
+
+</div>
+
+</section>
+
+<section>
+
+<div class="card fade">
 
 <h2>Lo orgulloso que estoy de ti 🌹</h2>
 
-<p id="texto3"></p>
+<p id="mensaje2"></p>
+
+</div>
 
 </section>
 
-<section class="oculto" id="fuerza">
+<section>
 
-<h2>Cuando sientas que ya no puedes...</h2>
+<div class="card fade">
 
-<p id="texto4"></p>
+<h2>Cuando sientas que ya no puedes más 💖</h2>
 
-</section>
+<p id="mensaje3"></p>
 
-<section class="oculto" id="promesa">
-
-<h2>Mi Promesa</h2>
-
-<p id="texto5"></p>
+</div>
 
 </section>
 
-<section class="oculto final">
+<section>
 
-<h1>Te amo infinitamente ❤️</h1>
+<div class="card fade">
 
-<p>
+<h2>Quiero que recuerdes siempre...</h2>
 
-Gracias por existir.
+<p class="quote">
 
-Gracias por elegirme.
+"Nunca olvides que eres el amor de mi vida.
 
-Gracias por hacerme el hombre más feliz.
+Eres la mujer más fuerte, más hermosa y más valiente que conozco.
 
-Siempre será un privilegio caminar contigo.
+No importa cuántas veces la vida quiera ponerte pruebas...
+
+Siempre podrás con ellas.
+
+Y cuando sientas que ya no tienes fuerzas...
+
+Aquí estará mi amor para sostenerte.
+
+Siempre."
 
 </p>
 
-<h2>Con todo mi amor...</h2>
-
-<h1>Juan ❤️</h1>
+</div>
 
 </section>
 
-<audio id="musica" loop>
+<section>
 
-<source src="musica/nuestra-cancion.mp3" type="audio/mpeg">
+<h2 class="fade">
 
-</audio>
+Gracias por existir ❤️
+
+</h2>
+
+<p class="fade">
+
+Gracias por cada abrazo.
+
+Gracias por cada sonrisa.
+
+Gracias por cada sueño que compartimos.
+
+Gracias por hacer de mi vida un lugar mucho más bonito.
+
+Te amo infinitamente.
+
+Hoy...
+
+Mañana...
+
+Y toda la vida.
+
+❤️
+
+</p>
+
+<button class="btn" id="inicio">
+
+Volver al inicio
+
+</button>
+
+</section>
+
+<footer>
+
+Hecho con todo mi amor ❤️
+
+</footer>
 
 <script src="script.js"></script>
 
