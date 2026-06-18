@@ -41,7 +41,7 @@ p {
 
 section {
     width: 100%;
-    max-width: 800px;
+    max-width: 900px; /* Lo hice un poco más ancho para que quepa bien todo lado a lado */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -52,22 +52,29 @@ section {
     padding: 20px 0;
 }
 
+/* --- MAGIA DEL DISEÑO LADO A LADO --- */
 .card {
     background-color: rgba(255, 255, 255, 0.05);
-    padding: 30px;
+    padding: 40px;
     border-radius: 15px;
     width: 100%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra todo el contenido de la tarjeta */
+    flex-direction: row; /* Coloca el texto a la izquierda y la foto a la derecha */
+    align-items: center; /* Centra ambos verticalmente */
+    justify-content: space-between;
+    gap: 40px; /* Espacio limpio entre el texto y la foto */
+    text-align: left; /* Alinea el texto a la izquierda para leer mejor */
 }
 
-/* Ajuste clave para centrar la foto y separarla del texto */
+.card-texto {
+    flex: 1; /* Permite que el texto use todo el espacio sobrante */
+}
+
 .foto-item {
+    flex-shrink: 0; /* Evita que la foto se encoja o aplaste */
     width: 100%;
-    max-width: 300px;
-    margin: 20px auto 0; 
+    max-width: 280px; /* Tamaño perfecto para la foto lateral */
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(255, 77, 109, 0.2);
@@ -141,5 +148,15 @@ footer {
     100% {
         transform: translateY(-120vh) rotate(360deg);
         opacity: 0;
+    }
+}
+
+/* --- ADAPTACIÓN PARA CELULARES --- */
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column; /* Vuelve a poner la foto debajo del texto en pantallas pequeñas */
+        text-align: center; /* Vuelve a centrar el texto */
+        padding: 25px; /* Reduce un poco el espacio interno para que quepa bien en celular */
+        gap: 20px;
     }
 }
